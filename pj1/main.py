@@ -2,10 +2,13 @@ import os
 import argparse
 import numpy as np
 import pandas as pd
+import json
 
 from sklearn.preprocessing import label_binarize
-from sklearn.svm import SVC
+from sklearn.svm import SVC, LinearSVC
 from fea import feature_extraction
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import KFold, train_test_split
 
 from Bio.PDB import PDBParser
 
@@ -21,44 +24,77 @@ class SVMModel:
 
 class LRModel:
     # todo: 
-    """
-        Initialize Logistic Regression (from sklearn) model.
+    def __init__(self, C: float = 1.0) -> None:
+        """
+            Initialize Logistic Regression (from sklearn) model.
 
-        Parameters:
-        - C (float): Inverse of regularization strength; must be a positive float. Default is 1.0.
-    """
+            Parameters:
+            - C (float): Inverse of regularization strength; must be a positive float. Default is 1.0.
+        """
+        self.C = C
+        self.model = LogisticRegression(C=C)
 
-    """
-        Train the Logistic Regression model.
+    def train(self, train_data, train_targets):
+        """
+            Train the Logistic Regression model.
 
-        Parameters:
-        - train_data (array-like): Training data.
-        - train_targets (array-like): Target values for the training data.
-    """
+            Parameters:
+            - train_data (array-like): Training data.
+            - train_targets (array-like): Target values for the training data.
+        """
+        self.model.fit(train_data, train_targets)
 
-    """
-        Evaluate the performance of the Logistic Regression model.
+    def evaluate(self, data, targets):
+        """
+            Evaluate the performance of the Logistic Regression model.
 
-        Parameters:
-        - data (array-like): Data to be evaluated.
-        - targets (array-like): True target values corresponding to the data.
+            Parameters:
+            - data (array-like): Data to be evaluated.
+            - targets (array-like): True target values corresponding to the data.
 
-        Returns:
-        - float: Accuracy score of the model on the given data.
-    """
+            Returns:
+            - float: Accuracy score of the model on the given data.
+        """
+        return self.model.score(data, targets)
 
 class LinearSVMModel:
     # todo
-    """
-        Initialize Linear SVM (from sklearn) model.
+    def __init__(self, C: float=1.0) -> None:
+        """
+            Initialize Linear SVM (from sklearn) model.
 
-        Parameters:
-        - C (float): Inverse of regularization strength; must be a positive float. Default is 1.0.
-    """
+            Parameters:
+            - C (float): Inverse of regularization strength; must be a positive float. Default is 1.0.
+        """
+        self.C = C
+        self.model = LinearSVC(C=C)
 
     """
         Train and Evaluate are the same.
     """
+
+    def train(self, train_data, train_targets):
+        """
+            Train the Linear SVM model.
+
+            Parameters:
+            - train_data (array-like): Training data.
+            - train_targets (array-like): Target values for the training data.
+        """
+        self.model.fit(train_data, train_targets)
+
+    def evaluate(self, data, targets):
+        """
+            Evaluate the performance of the Linear SVM model.
+
+            Parameters:
+            - data (array-like): Data to be evaluated.
+            - targets (array-like): True target values corresponding to the data.
+
+            Returns:
+            - float: Accuracy score of the model on the given data.
+        """
+        return self.model.score(data, targets)
 
 
 def data_preprocess(args):
@@ -75,11 +111,28 @@ def data_preprocess(args):
         task_col = cast.iloc[:, task]
       
         ## todo: Try to load data/target
+        task_col = cast.iloc[:, task]
         
-        data_list.append((train_data, test_data))
+        train_indices = np.where((task_col == 1) | (task_col == 2))[0]
+        test_indices = np.where((task_col == 3) | (task_col == 4))[0]
+        
+        train_data = diagrams[train_indices].tolist()
+        train_targets = task_col.iloc[train_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+
+        test_data = diagrams[test_indices].tolist()
+        test_targets = task_col.iloc[test_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+
+        data_list.append((train_data, test_data)) 
         target_list.append((train_targets, test_targets))
+
+    with open("data_list_test.json", 'w') as data_f:
+        json.dump(data_list, data_f, indent=4)
+    with open("target_list_test.json", 'w') as target_f:
+        json.dump(target_list, target_f, indent=4)
     
+    print(len(data_list), len(target_list))
     return data_list, target_list
+
 
 def main(args):
 
@@ -121,6 +174,7 @@ def main(args):
 
     print("Training accuracy:", sum(task_acc_train)/len(task_acc_train))
     print("Testing accuracy:", sum(task_acc_test)/len(task_acc_test))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SVM Model Training and Evaluation")

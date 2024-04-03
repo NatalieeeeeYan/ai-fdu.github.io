@@ -23,7 +23,7 @@ def feature_extraction():
     print("Atom names:", atom_names_sorted)
     
     # 初始化一个空的NumPy矩阵
-    atom_matrix = np.zeros((len(file_names), len(atom_names_sorted)))
+    atom_matrix = np.zeros((len(file_names), len(atom_names_sorted))) 
 
     # 第二步：再次遍历每个文件，更新矩阵中相应的原子数量
     for file_index, file in enumerate(os.listdir("./data/SCOP40mini")):
@@ -44,6 +44,7 @@ def feature_extraction():
     print("Feature extraction completed.")  # 打印函数完成消息
 
     return atom_matrix, atom_names_sorted
+
 
 if __name__ == "__main__":
     # 调用函数并获取返回的矩阵和原子名称列表
