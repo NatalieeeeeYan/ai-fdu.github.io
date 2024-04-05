@@ -3,6 +3,7 @@ import argparse
 import numpy as np
 import pandas as pd
 import json
+import time
 
 from sklearn.preprocessing import label_binarize
 from sklearn.svm import SVC, LinearSVC
@@ -13,11 +14,34 @@ from sklearn.model_selection import KFold, train_test_split
 from Bio.PDB import PDBParser
 
 class SVMModel:
-    def __init__(self, kernel='rbf', C=1.0):
-        self.model = SVC(kernel=kernel, C=C, probability=True)
+    def __init__(self, kernel='rbf', C=1.0, max_iter=1000, patience=10):
+        self.kernel = kernel
+        self.C = C
+        self.max_iter = max_iter
+        self.patience = patience
+        if kernel == 'linear':
+            self.model = SVC(kernel=kernel, C=C, max_iter=max_iter)
+        else:
+            self.model = SVC(kernel=kernel, C=C)
 
     def train(self, train_data, train_targets):
-        self.model.fit(train_data, train_targets)
+        if self.kernel == 'linear' and self.max_iter is not None and self.patience is not None:
+            best_test_accuracy = 0
+            epochs_without_improvement = 0
+            for epoch in range(self.max_iter):
+                self.model.fit(train_data, train_targets)
+                train_accuracy = self.model.score(train_data, train_targets)
+                if train_accuracy > best_test_accuracy:
+                    best_test_accuracy = train_accuracy
+                    epochs_without_improvement = 0
+                else:
+                    epochs_without_improvement += 1
+
+                if epochs_without_improvement >= self.patience:
+                    print(f"No improvement for {self.patience} epochs. Stopping training.")
+                    break
+        else:
+            self.model.fit(train_data, train_targets)
 
     def evaluate(self, data, targets):
         return self.model.score(data, targets)
@@ -135,6 +159,7 @@ def data_preprocess(args):
 
 
 def main(args):
+    start_total_time = time.time()
 
     data_list, target_list = data_preprocess(args)
 
@@ -172,8 +197,11 @@ def main(args):
         task_acc_test.append(test_accuracy)
 
 
+    end_total_time = time.time()
+    
     print("Training accuracy:", sum(task_acc_train)/len(task_acc_train))
     print("Testing accuracy:", sum(task_acc_test)/len(task_acc_test))
+    print(f"Total time taken: {end_total_time - start_total_time} seconds")
 
 
 if __name__ == "__main__":
@@ -182,5 +210,7 @@ if __name__ == "__main__":
     parser.add_argument('--kernel', type=str, default='rbf', choices=['linear', 'poly', 'rbf', 'sigmoid'], help="Kernel type")
     parser.add_argument('--C', type=float, default=20, help="Regularization parameter")
     parser.add_argument('--ent', action='store_true', help="Load data from a file using a feature engineering function feature_extraction() from fea.py")
+    parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations for linear SVM")
+    parser.add_argument('--patience', type=int, default=10, help="Number of epochs to wait for improvement for linear SVM")
     args = parser.parse_args()
     main(args)
