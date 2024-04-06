@@ -1,0 +1,335 @@
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/opt/anaconda3/envs/swy_py38/lib/python3.8/site-packages/sklearn/svm/_base.py:1250: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+55 55
+Attention: Kernel option is not supported
+Processing dataset 1/55
+Dataset 1/55 - Train Accuracy: 0.9693430656934306, Test Accuracy: 0.9895833333333334
+Processing dataset 2/55
+Dataset 2/55 - Train Accuracy: 0.9646539027982327, Test Accuracy: 0.9646017699115044
+Processing dataset 3/55
+Dataset 3/55 - Train Accuracy: 0.8069164265129684, Test Accuracy: 0.8672699849170438
+Processing dataset 4/55
+Dataset 4/55 - Train Accuracy: 0.9646539027982327, Test Accuracy: 0.9660766961651918
+Processing dataset 5/55
+Dataset 5/55 - Train Accuracy: 0.9319826338639653, Test Accuracy: 0.963963963963964
+Processing dataset 6/55
+Dataset 6/55 - Train Accuracy: 0.9297994269340975, Test Accuracy: 0.9848254931714719
+Processing dataset 7/55
+Dataset 7/55 - Train Accuracy: 0.27953890489913547, Test Accuracy: 0.24283559577677225
+Processing dataset 8/55
+Dataset 8/55 - Train Accuracy: 0.8680555555555556, Test Accuracy: 0.9795918367346939
+Processing dataset 9/55
+Dataset 9/55 - Train Accuracy: 0.8545454545454545, Test Accuracy: 0.9517133956386293
+Processing dataset 10/55
+Dataset 10/55 - Train Accuracy: 0.8346994535519126, Test Accuracy: 0.9776
+Processing dataset 11/55
+Dataset 11/55 - Train Accuracy: 0.877906976744186, Test Accuracy: 0.9133034379671151
+Processing dataset 12/55
+Dataset 12/55 - Train Accuracy: 0.9475218658892128, Test Accuracy: 0.9687034277198212
+Processing dataset 13/55
+Dataset 13/55 - Train Accuracy: 0.9153515064562411, Test Accuracy: 0.9787878787878788
+Processing dataset 14/55
+Dataset 14/55 - Train Accuracy: 0.8723098995695839, Test Accuracy: 0.9272727272727272
+Processing dataset 15/55
+Dataset 15/55 - Train Accuracy: 0.9396551724137931, Test Accuracy: 0.9863842662632375
+Processing dataset 16/55
+Dataset 16/55 - Train Accuracy: 0.9410071942446043, Test Accuracy: 0.9848942598187311
+Processing dataset 17/55
+Dataset 17/55 - Train Accuracy: 0.8672438672438673, Test Accuracy: 0.9156626506024096
+Processing dataset 18/55
+Dataset 18/55 - Train Accuracy: 0.905367231638418, Test Accuracy: 0.9830508474576272
+Processing dataset 19/55
+Dataset 19/55 - Train Accuracy: 0.9317851959361393, Test Accuracy: 0.9640718562874252
+Processing dataset 20/55
+Dataset 20/55 - Train Accuracy: 0.905367231638418, Test Accuracy: 0.9907550077041603
+Processing dataset 21/55
+Dataset 21/55 - Train Accuracy: 0.6914119359534207, Test Accuracy: 0.7208955223880597
+Processing dataset 22/55
+Dataset 22/55 - Train Accuracy: 0.9246376811594202, Test Accuracy: 0.9685157421289355
+Processing dataset 23/55
+Dataset 23/55 - Train Accuracy: 0.9629080118694362, Test Accuracy: 0.9546120058565154
+Processing dataset 24/55
+Dataset 24/55 - Train Accuracy: 0.9161849710982659, Test Accuracy: 0.9473684210526315
+Processing dataset 25/55
+Dataset 25/55 - Train Accuracy: 0.9005681818181818, Test Accuracy: 0.9571209800918836
+Processing dataset 26/55
+Dataset 26/55 - Train Accuracy: 0.7397058823529412, Test Accuracy: 0.7488921713441654
+Processing dataset 27/55
+Dataset 27/55 - Train Accuracy: 0.8217821782178217, Test Accuracy: 0.8784615384615385
+Processing dataset 28/55
+Dataset 28/55 - Train Accuracy: 0.18269230769230768, Test Accuracy: 0.057233704292527825
+Processing dataset 29/55
+Dataset 29/55 - Train Accuracy: 0.7379032258064516, Test Accuracy: 0.8858075040783034
+Processing dataset 30/55
+Dataset 30/55 - Train Accuracy: 0.19298245614035087, Test Accuracy: 0.02922077922077922
+Processing dataset 31/55
+Dataset 31/55 - Train Accuracy: 0.7994579945799458, Test Accuracy: 0.9515347334410339
+Processing dataset 32/55
+Dataset 32/55 - Train Accuracy: 0.43360433604336046, Test Accuracy: 0.35379644588045234
+Processing dataset 33/55
+Dataset 33/55 - Train Accuracy: 0.7935578330893118, Test Accuracy: 0.8219584569732937
+Processing dataset 34/55
+Dataset 34/55 - Train Accuracy: 0.9705449189985272, Test Accuracy: 0.9808259587020649
+Processing dataset 35/55
+Dataset 35/55 - Train Accuracy: 0.6576319543509273, Test Accuracy: 0.6920731707317073
+Processing dataset 36/55
+Dataset 36/55 - Train Accuracy: 0.9362962962962963, Test Accuracy: 0.9354838709677419
+Processing dataset 37/55
+Dataset 37/55 - Train Accuracy: 0.7808764940239044, Test Accuracy: 0.9437086092715232
+Processing dataset 38/55
+Dataset 38/55 - Train Accuracy: 0.30758988015978694, Test Accuracy: 0.15016501650165018
+Processing dataset 39/55
+Dataset 39/55 - Train Accuracy: 0.21304926764314247, Test Accuracy: 0.0231023102310231
+Processing dataset 40/55
+Dataset 40/55 - Train Accuracy: 0.7925033467202142, Test Accuracy: 0.9639344262295082
+Processing dataset 41/55
+Dataset 41/55 - Train Accuracy: 0.7254374158815612, Test Accuracy: 0.7638436482084691
+Processing dataset 42/55
+Dataset 42/55 - Train Accuracy: 0.783641160949868, Test Accuracy: 0.9833055091819699
+Processing dataset 43/55
+Dataset 43/55 - Train Accuracy: 0.756578947368421, Test Accuracy: 0.9229480737018425
+Processing dataset 44/55
+Dataset 44/55 - Train Accuracy: 0.8079019073569482, Test Accuracy: 0.9197431781701445
+Processing dataset 45/55
+Dataset 45/55 - Train Accuracy: 0.7691292875989446, Test Accuracy: 0.9532554257095158
+Processing dataset 46/55
+Dataset 46/55 - Train Accuracy: 0.921090387374462, Test Accuracy: 0.9742424242424242
+Processing dataset 47/55
+Dataset 47/55 - Train Accuracy: 0.9155937052932761, Test Accuracy: 0.9726443768996961
+Processing dataset 48/55
+Dataset 48/55 - Train Accuracy: 0.9080622347949081, Test Accuracy: 0.9892307692307692
+Processing dataset 49/55
+Dataset 49/55 - Train Accuracy: 0.9182209469153515, Test Accuracy: 0.9666666666666667
+Processing dataset 50/55
+Dataset 50/55 - Train Accuracy: 0.967741935483871, Test Accuracy: 0.9837037037037037
+Processing dataset 51/55
+Dataset 51/55 - Train Accuracy: 0.7434402332361516, Test Accuracy: 0.7809239940387481
+Processing dataset 52/55
+Dataset 52/55 - Train Accuracy: 0.9491279069767442, Test Accuracy: 0.9790732436472347
+Processing dataset 53/55
+Dataset 53/55 - Train Accuracy: 0.9765051395007343, Test Accuracy: 0.985207100591716
+Processing dataset 54/55
+Dataset 54/55 - Train Accuracy: 0.9720588235294118, Test Accuracy: 0.9793205317577548
+Processing dataset 55/55
+Dataset 55/55 - Train Accuracy: 0.9297218155197657, Test Accuracy: 0.9540059347181009
+Training accuracy: 0.8055971976494888
+Testing accuracy: 0.8467958977783244
+Total time taken: 19.709195137023926 seconds

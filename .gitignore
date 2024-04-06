@@ -6,3 +6,4 @@ pj1/__pycache__/
 pj1/data_list_test.json
 pj1/target_list_test.json
 pj1/*.log
+pj1/svm_logs/

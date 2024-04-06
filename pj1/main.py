@@ -209,8 +209,9 @@ if __name__ == "__main__":
     parser.add_argument('--model_type', type=str, default='svm', choices=['svm', 'linear_svm', 'lr'], help="Model type")
     parser.add_argument('--kernel', type=str, default='rbf', choices=['linear', 'poly', 'rbf', 'sigmoid'], help="Kernel type")
     parser.add_argument('--C', type=float, default=20, help="Regularization parameter")
+    parser.add_argument('--max_iter', type=int, default=1000, help="Maximum number of iterations for linear SVM")
+    parser.add_argument('--patience', type=int, default=20, help="Number of epochs to wait for improvement for linear SVM")
+
     parser.add_argument('--ent', action='store_true', help="Load data from a file using a feature engineering function feature_extraction() from fea.py")
-    parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations for linear SVM")
-    parser.add_argument('--patience', type=int, default=10, help="Number of epochs to wait for improvement for linear SVM")
     args = parser.parse_args()
     main(args)

@@ -1,0 +1,16 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "result evaluation",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/Users/songwenyan/FudanCourses/AI_Introduction/Code/ai-fdu.github.io/pj1/result_evaluate.py",
+            "console": "integratedTerminal", 
+            "cwd": "/Users/songwenyan/FudanCourses/AI_Introduction/Code/ai-fdu.github.io/pj1/"
+        }
+    ]
+}
