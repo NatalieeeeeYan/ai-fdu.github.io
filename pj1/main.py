@@ -9,9 +9,14 @@ from sklearn.preprocessing import label_binarize
 from sklearn.svm import SVC, LinearSVC
 from fea import feature_extraction
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import KFold, train_test_split
-
+from sklearn.decomposition import PCA
 from Bio.PDB import PDBParser
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.manifold import TSNE
+from sklearn.decomposition import PCA, KernelPCA
+from sklearn.neural_network import MLPRegressor
+from sklearn.model_selection import KFold
+
 
 class SVMModel:
     def __init__(self, kernel='rbf', C=1.0, max_iter=1000, patience=10):
@@ -25,23 +30,8 @@ class SVMModel:
             self.model = SVC(kernel=kernel, C=C)
 
     def train(self, train_data, train_targets):
-        if self.kernel == 'linear' and self.max_iter is not None and self.patience is not None:
-            best_test_accuracy = 0
-            epochs_without_improvement = 0
-            for epoch in range(self.max_iter):
-                self.model.fit(train_data, train_targets)
-                train_accuracy = self.model.score(train_data, train_targets)
-                if train_accuracy > best_test_accuracy:
-                    best_test_accuracy = train_accuracy
-                    epochs_without_improvement = 0
-                else:
-                    epochs_without_improvement += 1
-
-                if epochs_without_improvement >= self.patience:
-                    print(f"No improvement for {self.patience} epochs. Stopping training.")
-                    break
-        else:
-            self.model.fit(train_data, train_targets)
+        self.model.fit(train_data, train_targets)
+        
 
     def evaluate(self, data, targets):
         return self.model.score(data, targets)
@@ -126,35 +116,95 @@ def data_preprocess(args):
         diagrams = feature_extraction()[0]
     else:
         diagrams = np.load('./data/diagrams.npy')
+    
     cast = pd.read_table('./data/SCOP40mini_sequence_minidatabase_19.cast')
     cast.columns.values[0] = 'protein'
 
     data_list = []
     target_list = []
+
+    if args.KFold:
+        kf = KFold(n_splits=args.KFold, shuffle=True, random_state=42)  # 使用指定折数的交叉验证
+    else:
+        kf = None
+
     for task in range(1, 56):  # Assuming only one task for now
         task_col = cast.iloc[:, task]
-      
-        ## todo: Try to load data/target
-        task_col = cast.iloc[:, task]
+        # todo: Try to load data/target
         
-        train_indices = np.where((task_col == 1) | (task_col == 2))[0]
-        test_indices = np.where((task_col == 3) | (task_col == 4))[0]
+        # 使用交叉验证
+        if kf:
+            for train_indices, test_indices in kf.split(diagrams):
+                train_data = diagrams[train_indices].tolist()
+                train_targets = task_col.iloc[train_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+
+                test_data = diagrams[test_indices].tolist()
+                test_targets = task_col.iloc[test_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+
+                if args.random_forest:
+                    rf = RandomForestClassifier(n_estimators=100, random_state=42)
+                    rf.fit(train_data, train_targets)
+                    selected_features = rf.feature_importances_ > 0.01
+                    train_data = np.array(train_data)[:, selected_features]
+                    test_data = np.array(test_data)[:, selected_features]
+                
+                elif args.tsne:
+                    tsne = TSNE(n_components=2)
+                    train_data = np.array(train_data)
+                    train_data = tsne.fit_transform(train_data)
+                    test_data = np.array(test_data)
+                    test_data = tsne.fit_transform(test_data)
+
+                elif args.pca:
+                    pca = PCA(n_components=100)
+                    train_data = pca.fit_transform(train_data)
+                    test_data = pca.transform(test_data)
+                
+                elif args.kernel_pca:
+                    kpca = KernelPCA(n_components=100, kernel='rbf')
+                    train_data = kpca.fit_transform(train_data)
+                    test_data = kpca.transform(test_data)
+
+                data_list.append((train_data, test_data)) 
+                target_list.append((train_targets, test_targets))
         
-        train_data = diagrams[train_indices].tolist()
-        train_targets = task_col.iloc[train_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+        else:
+            train_indices = np.where((task_col == 1) | (task_col == 2))[0]
+            test_indices = np.where((task_col == 3) | (task_col == 4))[0]
+            
+            train_data = diagrams[train_indices].tolist()
+            train_targets = task_col.iloc[train_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
 
-        test_data = diagrams[test_indices].tolist()
-        test_targets = task_col.iloc[test_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
+            test_data = diagrams[test_indices].tolist()
+            test_targets = task_col.iloc[test_indices].apply(lambda x: 1 if x in [1, 3] else 0).tolist()
 
-        data_list.append((train_data, test_data)) 
-        target_list.append((train_targets, test_targets))
+            if args.random_forest:
+                rf = RandomForestClassifier(n_estimators=100, random_state=42)
+                rf.fit(train_data, train_targets)
+                selected_features = rf.feature_importances_ > 0.01
+                train_data = np.array(train_data)[:, selected_features]
+                test_data = np.array(test_data)[:, selected_features]
+            
+            elif args.tsne:
+                tsne = TSNE(n_components=2)
+                train_data = np.array(train_data)
+                train_data = tsne.fit_transform(train_data)
+                test_data = np.array(test_data)
+                test_data = tsne.fit_transform(test_data)
+        
+            elif args.pca:
+                pca = PCA(n_components=100)
+                train_data = pca.fit_transform(train_data)
+                test_data = pca.transform(test_data)
+            
+            elif args.kernel_pca:
+                kpca = KernelPCA(n_components=100, kernel='rbf')
+                train_data = kpca.fit_transform(train_data)
+                test_data = kpca.transform(test_data)
 
-    with open("data_list_test.json", 'w') as data_f:
-        json.dump(data_list, data_f, indent=4)
-    with open("target_list_test.json", 'w') as target_f:
-        json.dump(target_list, target_f, indent=4)
-    
-    print(len(data_list), len(target_list))
+            data_list.append((train_data, test_data)) 
+            target_list.append((train_targets, test_targets))
+
     return data_list, target_list
 
 
@@ -211,6 +261,12 @@ if __name__ == "__main__":
     parser.add_argument('--C', type=float, default=20, help="Regularization parameter")
     parser.add_argument('--max_iter', type=int, default=1000, help="Maximum number of iterations for linear SVM")
     parser.add_argument('--patience', type=int, default=20, help="Number of epochs to wait for improvement for linear SVM")
+    parser.add_argument('--KFold', type=int, default=0, help="Number of folds for KFold cross validation")
+
+    parser.add_argument('--pca', type=int, default=0, help='Use PCA to decomposite data or not. ')
+    parser.add_argument('--kernel_pca', type=int, default=0, help='Use Kernel PCA to decomposite data or not. ')
+    parser.add_argument('--tsne', type=int, default=0, help='Use t-SNE to decomposite data or not. ')
+    parser.add_argument('--random_forest', type=int, default=0, help='Use Random Forest to select features or not. ')
 
     parser.add_argument('--ent', action='store_true', help="Load data from a file using a feature engineering function feature_extraction() from fea.py")
     args = parser.parse_args()
