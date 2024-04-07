@@ -36,7 +36,7 @@
 2. **就55个分类任务的训练和测试准确率而言，Linear SVM 模型的准确率波动最大，使用 Linear 核函数的 SVM 模型次之。剩余模型（LR、使用剩余三个核函数的 SVM 模型）的正确率波动较小，且55个分类任务的训练准确率均高于75%，测试准确率均高于80%；在第25-30，第37-45组分类任务中训练准确率较低。**
 
    - Linear SVM 的准确率波动最大：本次任务的数据集在空间中不是很线性可分，模型在不同训练集子集上学到的决策边界可能有较大波动。
-   - 对 Linear SVM 的进行了使用不同正则化系数的实验（结果见：pj1/result_pics/lsvm_c_test_accuracy_plot.png 和 pj1/result_pics/lsvm_c_train_accuracy_plot.png）
+   - 对 Linear SVM 的进行了使用不同正则化系数的实验，发现 $C = 0.2$ 时模型准确率最高，随着 $C$ 增大，模型的表现变差。（结果：pj1/result_pics/lsvm_c_test_accuracy_plot.png，pj1/result_pics/lsvm_c_train_accuracy_plot.png）
 
    <img src="./result_pics/tasks_test_accuracy_plot.png" alt="tasks_test_accuracy_plot" style="zoom:30%;" />
 
@@ -83,3 +83,14 @@
 改用交叉验证法，实验中选择了5折（tsne由于交叉验证时间过长，仍使用默认划定的测试和训练集），发现 tsne 和 pca 的效果更好。
 
 <img src="./result_pics/decompose_accuracy_plot.png" alt="decompose_accuracy_plot" style="zoom:30%;" />
+
+#### * 文件说明：
+
+- pj1/result_evaluate.py：实验数据处理脚本
+- pj1/svm_C_run.sh：对 SVM 模型的核函数和正则化系数进行讨论的自动化实验脚本
+- pj1/lsvm_C_run.sh：对 LinearSVM 的正则化系数进行讨论的自动化实验脚本
+- pj1/result_pics：可视化的结果图片（如上述图片）
+- pj1/model_test_logs：对所有模型进行实验（C=1.0）的输出日志
+- pj1/svm_logs：对 SVM 模型的核函数和正则化系数进行讨论的实验输出日志
+- pj1/linear_svm_logs：对 LinearSVM 的正则化系数进行讨论的实验输出日志
+- pj1/*_scikit-learn.png：sciki-learn 官方说明截图
