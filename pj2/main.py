@@ -13,9 +13,7 @@ from torchvision import datasets
 from torchvision import transforms
 import os
 from tqdm import tqdm
-
-
-#Define the model, here we take resnet-18 as an example
+import torchvision.models as models
 
 class BasicBlock(nn.Module):
     expansion = 1
@@ -90,8 +88,6 @@ def design_model():
     return ResNet(BasicBlock, [2, 2, 2, 2])
 
 
-
-
 #训练代码
 
 def model_training(model, device, train_dataloader, optimizer, train_acc, train_losses):
@@ -104,9 +100,15 @@ def model_training(model, device, train_dataloader, optimizer, train_acc, train_
 
     for batch_idx, (data, target) in enumerate(pbar):
         data, target = data.to(device), target.to(device)
+        
         #TODO,补全代码,填在下方
 
         #补全内容:optimizer的操作，获取模型输出，loss设计与计算，反向传播
+        optimizer.zero_grad()  # 清空梯度
+        y_pred = model(data)  # 获取模型输出
+        loss = F.cross_entropy(y_pred, target)  # loss设计与计算
+        loss.backward()  # 反向传播
+        optimizer.step()  # 更新权重
 
         #TODO,补全代码,填在上方
 
@@ -136,6 +138,8 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
             #TODO,补全代码,填在下方
 
             #补全内容:获取模型输出，loss计算
+            output = model(data)  # 获取模型输出
+            test_loss += F.cross_entropy(output, target, reduction='sum').item()  # loss计算
 
             #TODO,补全代码,填在上方
 
@@ -152,13 +156,19 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
 
 
 def main():
-    device = "cuda" if torch.cuda.is_available else "cpu"
+    device = "cuda:1" if torch.cuda.is_available else "cpu"
     print(device)
 
 
     #prepare datasets and transforms
     train_transforms = transforms.Compose([
-            #TODO,设计针对训练数据集的图像增强
+            # TODO,设计针对训练数据集的图像增强
+            
+            # transforms.RandomRotation(degrees=(-15, 15)),
+            # transforms.RandomHorizontalFlip(p=0.5),
+            # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2),
+            
+            # end-todo
             transforms.ToTensor(), # comvert the image to tensor so that it can work with torch
             transforms.Normalize((0.491, 0.482, 0.446), (0.247, 0.243, 0.261)) #Normalize all the images
             ])
@@ -171,23 +181,36 @@ def main():
     trainset = datasets.CIFAR10(data_dir, train=True, download=True, transform=train_transforms)
     testset = datasets.CIFAR10(data_dir, train=False, download=True, transform=test_transforms)
 
+    # original batch size: 512
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=512,
                                             shuffle=True, num_workers=4)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=512,
+    testloader = torch.utils.data.DataLoader(testset, batch_size=521,
                                             shuffle=False, num_workers=4)
     
 
     # Importing Model and printing Summary,默认是ResNet-18
-    #TODO,分析讨论其他的CNN网络设计
-
+    # TODO,分析讨论其他的CNN网络设计
     model = design_model().to(device)
+    # VGG11
+    # model = models.vgg11()
+
     summary(model, input_size=(3,32,32))
 
     # Training the model
+    # TODO: 讨论优化器和学习率（lr）
+    # optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+    # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.05, patience=2, threshold=0.0001, threshold_mode='rel', cooldown=0, min_lr=0, eps=1e-08, verbose=True)
 
-    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
-    scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.05, patience=2, threshold=0.0001, threshold_mode='rel', cooldown=0, min_lr=0, eps=1e-08, verbose=True)
+    optimizers = [
+        optim.SGD(model.parameters(), lr=0.01, momentum=0.9),
+        optim.Adam(model.parameters(), lr=0.001),
+        optim.RMSprop(model.parameters(), lr=0.001)
+    ]
 
+    schedulers = [
+        [StepLR(optimizer, step_size=10, gamma=0.1) for optimizer in optimizers],
+        [ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=5, verbose=True) for optimizer in optimizers]
+    ]
 
     train_acc = []
     train_losses = []
@@ -198,16 +221,36 @@ def main():
 
     EPOCHS = 40
 
-    for i in range(EPOCHS):
-        print(f'EPOCHS : {i}')
-        #TODO,补全model_training里的代码
-        model_training(model, device, trainloader, optimizer, train_acc, train_losses)
-        scheduler.step(train_losses[-1])
-        #TODO,补全model_testing里的代码
-        model_testing(model, device, testloader, test_acc, test_losses)
+    for scheduler_list in schedulers:
+        scheduler_train_acc = []
+        scheduler_train_losses = []
+        scheduler_test_acc = []
+        scheduler_test_losses = []
 
-        # 保存模型权重
-        torch.save(model.state_dict(), os.path.join(model_path,'model.pth'))
+        for optim_idx, optimizer in enumerate(optimizers):
+            scheduler = scheduler_list[optim_idx]
+
+            print(f'Optimizer: {optimizer.__class__.__name__}, Scheduler: {scheduler.__class__.__name__}')
+
+            for i in range(EPOCHS):
+                print(f'EPOCHS : {i}')
+                
+                #TODO,补全model_training里的代码
+                
+                model_training(model, device, trainloader, optimizer, train_acc, train_losses)
+                scheduler.step(train_losses[-1])
+                
+                #TODO,补全model_testing里的代码
+                
+                model_testing(model, device, testloader, test_acc, test_losses)
+
+                # 保存模型权重
+                torch.save(model.state_dict(), os.path.join(model_path, f'model_{optimizer.__class__.__name__}_{scheduler.__class__.__name__}_{i}.pth'))
+        
+        train_acc.append(scheduler_train_acc)
+        train_losses.append(scheduler_train_losses)
+        test_acc.append(scheduler_test_acc)
+        test_losses.append(scheduler_test_losses)
 
 
     fig, axs = plt.subplots(2,2, figsize=(25,20))
@@ -215,12 +258,24 @@ def main():
     axs[0,0].set_title('Train Losses')
     axs[0,1].set_title(f'Training Accuracy (Max: {max(train_acc):.2f})')
     axs[1,0].set_title('Test Losses')
-    axs[1, 1].set_title(f'Test Accuracy (Max: {max(test_acc):.2f})')
+    axs[1,1].set_title(f'Test Accuracy (Max: {max(test_acc):.2f})')
 
-    axs[0,0].plot(train_losses)
-    axs[0,1].plot(train_acc)
-    axs[1,0].plot(test_losses)
-    axs[1,1].plot(test_acc)
+    # axs[0,0].plot(train_losses)
+    # axs[0,1].plot(train_acc)
+    # axs[1,0].plot(test_losses)
+    # axs[1,1].plot(test_acc)
+
+    for i, optimizer in enumerate(optimizers):
+        for j, scheduler in enumerate(schedulers[i]):
+            axs[0,0].plot(train_losses[i], label=f'{optimizer.__class__.__name__}_{scheduler.__class__.__name__}')
+            axs[0,1].plot(train_acc[i], label=f'{optimizer.__class__.__name__}_{scheduler.__class__.__name__}')
+            axs[1,0].plot(test_losses[i], label=f'{optimizer.__class__.__name__}_{scheduler.__class__.__name__}')
+            axs[1,1].plot(test_acc[i], label=f'{optimizer.__class__.__name__}_{scheduler.__class__.__name__}')
+
+    axs[0,0].legend()
+    axs[0,1].legend()
+    axs[1,0].legend()
+    axs[1,1].legend()
 
     # 保存图像
     plt.savefig('curves.png')  # 保存为名为 'plot.png' 的图片文件

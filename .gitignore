@@ -10,3 +10,9 @@ pj1/svm_logs/
 pj1/model_test_logs/
 pj1/decompose_logs/
 pj1/linear_svm_logs/
+
+*.zip
+
+pj2/.idea/
+pj2/data/
+pj2/*.ipynb
